@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_gravity="right"
+    tools:context=".dialog.FeedbackDialogFragment">
+
+    <ImageView
+        android:id="@+id/imageView40"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/intro_banner" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout27"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B2000000">
+
+            <TextView
+                android:id="@+id/textView58"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="운동 평가"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFbPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="#FFFFFF"
+                android:textSize="34dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cpbFb"
+                app:layout_constraintEnd_toEndOf="@+id/cpbFb"
+                app:layout_constraintStart_toStartOf="@+id/cpbFb"
+                app:layout_constraintTop_toTopOf="@+id/cpbFb" />
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/cpbFb"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="40dp"
+                app:cpb_background_progressbar_color_end="#3B3B3B"
+                app:cpb_background_progressbar_color_start="#3B3B3B"
+                app:cpb_background_progressbar_width="12dp"
+                app:cpb_progressbar_color="#FFFFFF"
+                app:cpb_progressbar_color_end="#FFFFFF"
+                app:cpb_progressbar_color_start="#FFFFFF"
+                app:cpb_round_border="true"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cardView5" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView5"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cpbFb"
+                app:layout_constraintTop_toBottomOf="@+id/textView58">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#33000000">
+
+                    <TextView
+                        android:id="@+id/tvFbCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="28dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView41"
+                        app:layout_constraintStart_toStartOf="@+id/imageView41"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.75" />
+
+                    <ImageView
+                        android:id="@+id/imageView41"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/icon_autocomplete_button_hollow"
+                        android:tint="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.75"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView38"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_time_sub_800"
+                        android:tint="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.25"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvFbTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11:12"
+                        android:textColor="#FFFFFF"
+                        android:textSize="28dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView38"
+                        app:layout_constraintStart_toStartOf="@+id/imageView38"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.75" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView38"
+                        app:layout_constraintStart_toStartOf="@+id/imageView38"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView38" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exercise"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView41"
+                        app:layout_constraintStart_toStartOf="@+id/imageView41"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView41" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="80dp"
+                android:text="운동 강도"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView24"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView61">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#33000000"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvFbIntensity1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="매우\n낮다"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view16"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbIntensity2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="저강도"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view17"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbIntensity3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="보통"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view18"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbIntensity4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="고강도"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view19"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbIntensity5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="매우\n고강도"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:text="운동 피로도"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView24" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView25"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView62">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#40000000"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvFbFatigue1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="매우\n낮다"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view12"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbFatigue2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="저강도"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view13"
+                        android:layout_width="2dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbFatigue3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="보통"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view14"
+                        android:layout_width="2dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbFatigue4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="높다"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view15"
+                        android:layout_width="2dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbFatigue5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="매우\n높다"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="운동 만족도"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView25" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView26"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView63">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#40000000"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvFbSatisfaction1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="많이\n아쉽다"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view20"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbSatisfaction2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="아쉽다"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view21"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbSatisfaction3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="보통"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view22"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbSatisfaction4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="만족"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+
+                    <View
+                        android:id="@+id/view23"
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/color_gradient_white_middle_horizon" />
+
+                    <TextView
+                        android:id="@+id/tvFbSatisfaction5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="매우\n만족"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout
+                android:id="@+id/frameLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_shadow_top_radius"
+                android:padding="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp">
+
+                    <Button
+                        android:id="@+id/btnFbPainPartSelect"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="3"
+                        android:backgroundTint="@color/secondaryColor"
+                        android:drawableLeft="@drawable/icon_autocomplete_button_hollow"
+                        android:drawableTint="#FFFFFF"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:padding="20dp"
+                        android:text="통증체크"
+                        android:textColor="@color/white"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+
+                    <Button
+                        android:id="@+id/btnFbSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="2"
+                        android:backgroundTint="@color/mainColor"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="제출하기"
+                        android:textColor="@color/white"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/color_gradient_white_middle_verti"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
+            <TextView
+                android:id="@+id/tvFbSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="건너뛰기"
+                android:textColor="#99FFFFFF"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView26"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

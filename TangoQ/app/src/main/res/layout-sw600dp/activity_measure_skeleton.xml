@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clMeasureSkeleton"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".MeasureSkeletonActivity">
+
+    <!--    <com.tangoplus.tangoq.view.CameraSurfaceView-->
+    <!--        android:id="@+id/csvPS"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_finder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:scaleType="fillStart">
+
+    </androidx.camera.view.PreviewView>
+
+    <com.tangoplus.tangoq.mediapipe.OverlayView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMeasureSkeletonGuide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        android:gravity="center"
+        android:paddingBottom="256dp"
+        android:text="곧 측정이 시작됩니다 !  📸\n카메라를 잘 조정해주세요"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivMeasureSkeletonFrame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="128dp"
+        app:layout_constraintBottom_toTopOf="@+id/clMeasureSkeletonBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view_finder"
+        app:layout_constraintTop_toBottomOf="@+id/clMeasureSkeletonTop"
+        app:layout_constraintVertical_bias="0.6"
+        app:srcCompat="@drawable/drawable_measure_0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMeasureSkeletonTop"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@drawable/background_radius_8dp_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvMeasureSkeletonCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:text="프레임에 맞춰 서주세요"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/ibtnMeasureSkeletonBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ibtnMeasureSkeletonBack" />
+
+        <ImageButton
+            android:id="@+id/ibtnMeasureSkeletonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:background="#00FFFFFF"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_arrow_left" />
+
+        <com.shuhart.stepview.StepView
+            android:id="@+id/svMeasureSkeleton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibtnMeasureSkeletonBack"
+            app:sv_animationDuration="250"
+            app:sv_animationType="Circle"
+            app:sv_background="#00FFFFFF"
+            app:sv_doneCircleColor="@color/mainColor"
+            app:sv_doneStepLineColor="@color/subColor100"
+            app:sv_doneStepMarkColor="@color/subColor100"
+            app:sv_doneTextColor="@color/mainColor"
+            app:sv_nextStepCircleColor="@color/subColor100"
+            app:sv_nextStepCircleEnabled="true"
+            app:sv_nextStepLineColor="@color/subColor100"
+            app:sv_nextTextColor="@color/subColor100"
+            app:sv_selectedCircleColor="@color/mainColor"
+            app:sv_selectedStepNumberColor="@color/subColor100"
+            app:sv_selectedTextColor="@color/mainColor"
+            app:sv_stepsNumber="7"
+            app:sv_textPadding="4dp"
+            app:sv_textSize="14sp" />
+
+        <com.tomlecollegue.progressbars.HorizontalProgressView
+            android:id="@+id/pvMeasureSkeleton"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="#00FFFFFF"
+            android:orientation="horizontal"
+            android:requiresFadingEdge="horizontal"
+            android:stateListAnimator="@null"
+            app:colorBackground="@color/subColor100"
+            app:colorProgress="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/svMeasureSkeleton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMeasureSkeletonBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_radius_8dp_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMeasureSkeletonStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/effect_ibtn_12dp"
+            android:backgroundTint="@color/mainColor"
+            android:padding="20dp"
+            android:stateListAnimator="@null"
+            android:text="측정하기"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/flMeasureSkeleton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -146,12 +146,19 @@ class ExerciseFragment : Fragment(), OnCategoryClickListener {
         when (isNetworkAvailable(requireContext())) {
             true -> {
                 lifecycleScope.launch {
-                    val categoryArrayList = fetchExerciseAll(getString(R.string.IP_ADDRESS_t_exercise_description)).sortedBy { it.first }.toMutableList()
+//                    val categoryArrayList = fetchExerciseAll(getString(R.string.IP_ADDRESS_t_exercise_description)).sortedBy { it.first }.toMutableList()
 //            val typeArrayList = fetchExerciseType(getString(R.string.IP_ADDRESS_t_Exercise_Description))
+
+                    val categoryArrayList = mutableListOf<Pair<Int, String>>()
+                    categoryArrayList.add(Pair(1, "기본 밸런스 운동프로그램"))
+                    categoryArrayList.add(Pair(2, "기본 스트레칭 운동"))
+                    categoryArrayList.add(Pair(3, "근육중심 운동프로그램"))
+                    categoryArrayList.add(Pair(4, "운동기구 활용 스트레칭 프로그램"))
+                    categoryArrayList.add(Pair(5, "운동기구 활용 운동프로그램"))
                     val typeArrayList = listOf("목관절", "어깨", "팔꿉", "손목", "척추", "복부", "엉덩", "무릎","발목" )
 
                     try { // ------! rv vertical 시작 !------
-                        Log.v("cateSize", "mainCategoryList: ${categoryArrayList}, subCategoryList: $typeArrayList")
+//                        Log.v("cateSize", "mainCategoryList: ${categoryArrayList}, subCategoryList: $typeArrayList")
                         val adapter = ExerciseCategoryRVAdapter(categoryArrayList, typeArrayList,this@ExerciseFragment, this@ExerciseFragment, sn,"mainCategory" )
                         binding.rvEMainCategory.adapter = adapter
                         val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)

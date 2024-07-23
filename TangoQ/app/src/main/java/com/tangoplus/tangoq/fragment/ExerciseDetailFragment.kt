@@ -23,6 +23,7 @@ import com.tangoplus.tangoq.databinding.FragmentExerciseDetailBinding
 import com.tangoplus.tangoq.fragment.FavoriteEditFragment.Companion
 import com.tangoplus.tangoq.listener.OnCategoryClickListener
 import com.tangoplus.tangoq.listener.OnExerciseAddClickListener
+import com.tangoplus.tangoq.`object`.NetworkExercise.fetchCategoryAndSearch
 import com.tangoplus.tangoq.`object`.NetworkExercise.fetchExerciseByCategory
 import com.tangoplus.tangoq.`object`.Singleton_t_history
 import kotlinx.coroutines.launch
@@ -75,9 +76,9 @@ class ExerciseDetailFragment : Fragment(), OnCategoryClickListener, OnExerciseAd
         // ------! 선택 카테고리 & 타입 가져오기  !------
 
         binding.sflED.startShimmer()
-        binding.nsvED.isNestedScrollingEnabled = false
-        binding.rvEDAll.isNestedScrollingEnabled = false
-        binding.rvEDAll.overScrollMode = 0
+//        binding.nsvED.isNestedScrollingEnabled = false
+//        binding.rvEDAll.isNestedScrollingEnabled = false
+//        binding.rvEDAll.overScrollMode = 0
 
         when (categoryId) {
             1 -> binding.tvEDMainCategoryName.text = "기본 밸런스"
@@ -96,7 +97,7 @@ class ExerciseDetailFragment : Fragment(), OnCategoryClickListener, OnExerciseAd
         }
 
         // -----! 카테고리  시작 !-----
-        val categoryList = listOf("전체","목관절", "어깨", "팔꿉", "손목", "척추", "복부", "엉덩", "무릎", "발목")
+        val categoryList = listOf("목관절", "어깨", "팔꿉", "손목", "척추", "복부", "엉덩", "무릎", "발목")
         val adapter2 = ExerciseCategoryRVAdapter(mutableListOf(), categoryList, this@ExerciseDetailFragment, this@ExerciseDetailFragment, sn!! ,"subCategory" )
         binding.rvEDCategory.adapter = adapter2
         val linearLayoutManager2 = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -104,8 +105,8 @@ class ExerciseDetailFragment : Fragment(), OnCategoryClickListener, OnExerciseAd
         // -----! 카테고리 끝 !-----
 
         lifecycleScope.launch {
-            filteredDataList  = fetchExerciseByCategory(getString(R.string.IP_ADDRESS_t_exercise_description), categoryId!!)
-
+//            filteredDataList  = fetchExerciseByCategory(getString(R.string.IP_ADDRESS_t_exercise_description), categoryId!!)
+            filteredDataList = fetchCategoryAndSearch(getString(R.string.IP_ADDRESS_t_exercise_description), categoryId!!, 1)
             // ------! 자동완성 시작 !------
             val exerciseNames = filteredDataList.map { it.exerciseName }.distinct()
             val adapterActv = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, exerciseNames)
@@ -226,13 +227,7 @@ class ExerciseDetailFragment : Fragment(), OnCategoryClickListener, OnExerciseAd
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCategoryClick(sn : Int , category: String) {
-        val filterList: MutableList<ExerciseVO> = if (category == "전체") {
-            filteredDataList
-        } else {
-            filteredDataList.filter { item ->
-                item.relatedJoint!!.contains(category)
-            }.toMutableList()
-        }
+        val filterList: MutableList<ExerciseVO> = filteredDataList.filter { item -> item.relatedJoint!!.contains(category) }.toMutableList()
         updateRecyclerView(sn, filterList)
     }
 
